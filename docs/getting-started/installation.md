@@ -36,29 +36,15 @@ python3 --version
 
 It's a good habit to install Python packages inside a virtual environment rather than into your global Python installation. This keeps your projects isolated from each other and makes it easy to manage dependencies.
 
-=== "uv (recommended)"
+We recommend using `uv` for environment management:
 
-    ```sh
-    # Create and sync the environment
-    uv sync
+```sh
+# Create and sync the environment
+uv sync
 
-    # Activate it
-    source .venv/bin/activate
-    ```
-
-=== "venv (built-in)"
-
-    ```sh
-    # Create a virtual environment called ".venv"
-    python -m venv .venv
-
-    # Activate it
-    # On macOS / Linux:
-    source .venv/bin/activate
-
-    # On Windows:
-    .venv\Scripts\activate
-    ```
+# Activate it
+source .venv/bin/activate
+```
 
 Once your environment is active, you'll see the environment name in your terminal prompt. Everything you install from here goes into that environment, not your system Python.
 

@@ -50,7 +50,7 @@ Don't worry if you're not sure where to start — pick the path below that match
 Here's a quick overview of each page in this section, so you know what to expect:
 
 `Installation`
-:   How to install `cxas-scrapi` with pip, set up a virtual environment, install from source, and verify your setup. Covers Python 3.10+ requirements and the `gcloud` CLI recommendation.
+:   How to install `cxas-scrapi` with `uv`, set up a virtual environment, install from source, and verify your setup. Covers Python 3.10+ requirements and the `gcloud` CLI recommendation.
 
 `Authentication`
 :   A full walkthrough of how SCRAPI finds your credentials, in priority order. Covers Application Default Credentials (ADC) via the gcloud CLI, Google Colab interactive auth, Cloud Functions and Cloud Run ambient credentials, service account JSON keys, and the `CXAS_OAUTH_TOKEN` environment variable.

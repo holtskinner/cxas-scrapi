@@ -29,7 +29,7 @@ The agent implements the [Slot Filling Pattern](../patterns/slot-filling.md) end
 - Python 3.10 or later
 - A Google Cloud project with CX Agent Studio enabled
 - A CX Agent Studio app created in the UI (you'll get its app ID from `cxas apps list`)
-- SCRAPI installed: `pip install cxas-scrapi`
+- SCRAPI installed: `uv pip install cxas-scrapi`
 - SCRAPI authenticated: `gcloud auth application-default login`
 
 ---

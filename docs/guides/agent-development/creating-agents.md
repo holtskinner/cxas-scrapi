@@ -13,7 +13,7 @@ This guide walks you through creating a CX Agent Studio app from scratch. You'll
 
 Make sure you have:
 
-- SCRAPI installed (`pip install cxas-scrapi`)
+- SCRAPI installed (`uv pip install cxas-scrapi`)
 - A Google Cloud project with CX Agent Studio enabled
 - Valid credentials set up (see [Authentication](../../getting-started/authentication.md))
 

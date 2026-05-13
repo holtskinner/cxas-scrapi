@@ -15,7 +15,7 @@ By the end, you'll understand the core pull → lint → edit → push workflow 
 
 Before you start, make sure you have:
 
-- [x] SCRAPI installed: `pip install cxas-scrapi`
+- [x] SCRAPI installed: `uv pip install cxas-scrapi`
 - [x] Authentication configured (see [Authentication](authentication.md))
 - [x] A GCP project with at least one CX Agent Studio App
 

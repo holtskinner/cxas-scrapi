@@ -6,12 +6,12 @@ When the readiness check identifies a first-time user (no `.venv/`):
 
 1. **Create virtualenv and install dependencies:**
    ```bash
-   python3 -m venv .venv
+   uv venv .venv
    source .venv/bin/activate
    ```
    Then find `cxas-scrapi` source (look for `setup.py` containing `cxas-scrapi` in parent directories or siblings) and install:
    ```bash
-   pip install -e <path_to_cxas_scrapi> --quiet
+   uv pip install -e <path_to_cxas_scrapi> --quiet
    ```
 2. **Collect project details** -- see Configuration below.
 3. Confirm with the user: "Your environment is set up. You're connected to **[app_name]** on **[project_id]**."

@@ -43,7 +43,7 @@ Authentication can vary depending on how and where you are interacting with SCRA
 If you're using CXAS SCRAPI with a [Google Colab](https://colab.research.google.com/) notebook, you can add the following to the top of your notebook for easy authentication:
 
 ```py
-pip install cxas-scrapi
+!pip install cxas-scrapi --quiet
 ```
 
 ```py

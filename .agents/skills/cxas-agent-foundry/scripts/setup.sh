@@ -114,12 +114,7 @@ if [ "$CONFIGURE_ONLY" = false ]; then
     # --- Step 1: Create virtualenv ---
     if [ ! -d "$VENV_DIR" ]; then
       echo "[1/3] Creating virtualenv in ${VENV_DIR}..."
-      if command -v uv >/dev/null 2>&1; then
-        uv venv "$VENV_DIR" --quiet
-      else
-        echo "      Warning: uv not found. Falling back to python3 -m venv."
-        python3 -m venv "$VENV_DIR"
-      fi
+      uv venv "$VENV_DIR" --quiet
     else
       echo "[1/3] Virtualenv already exists at ${VENV_DIR}"
     fi
@@ -127,20 +122,15 @@ if [ "$CONFIGURE_ONLY" = false ]; then
     source "${VENV_DIR}/bin/activate"
 
     # --- Step 2: Install cxas-scrapi from local source ---
-    if [ -z "$SCRAPI_DIR" ] || [ ! -f "$SCRAPI_DIR/setup.py" ]; then
+    if [ -z "$SCRAPI_DIR" ] || [ ! -f "$SCRAPI_DIR/pyproject.toml" ]; then
       echo "[2/3] Error: Could not find cxas-scrapi source."
       echo "      Looked relative to skill at: $SKILL_ROOT"
       exit 1
     fi
 
     echo "[2/3] Installing cxas-scrapi from $SCRAPI_DIR..."
-    if command -v uv >/dev/null 2>&1; then
-      uv pip install -e "$SCRAPI_DIR" --quiet
-      uv pip install rich InquirerPy --quiet
-    else
-      pip install -e "$SCRAPI_DIR" --quiet
-      pip install rich InquirerPy --quiet
-    fi
+    uv pip install -e "$SCRAPI_DIR" --quiet
+    uv pip install rich InquirerPy --quiet
 
     echo ""
     installed_ver=$(python -c "import importlib.metadata; print(importlib.metadata.version('cxas-scrapi'))" 2>/dev/null || echo "unknown")
@@ -148,11 +138,7 @@ if [ "$CONFIGURE_ONLY" = false ]; then
     echo ""
   else
     # Ensure rich + InquirerPy are installed even if scrapi was already there
-    if command -v uv >/dev/null 2>&1; then
-      uv pip install rich InquirerPy --quiet 2>/dev/null
-    else
-      pip install rich InquirerPy --quiet 2>/dev/null
-    fi
+    uv pip install rich InquirerPy --quiet 2>/dev/null
     echo ""
   fi
 else
@@ -162,11 +148,7 @@ else
     exit 1
   fi
   source "${VENV_DIR}/bin/activate"
-  if command -v uv >/dev/null 2>&1; then
-    uv pip install rich InquirerPy --quiet 2>/dev/null
-  else
-    pip install rich InquirerPy --quiet 2>/dev/null
-  fi
+  uv pip install rich InquirerPy --quiet 2>/dev/null
 fi
 
 # --- Step 2.5: Ensure gemini-cli can discover the skill's sub-agents ---

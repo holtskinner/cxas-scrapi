@@ -17,7 +17,7 @@ hide:
     ---
 
     ```sh
-    pip install cxas-scrapi
+    uv pip install cxas-scrapi
     ```
 
     Python 3.10+ · Apache 2.0 · [GitHub](https://github.com/GoogleCloudPlatform/cxas-scrapi)

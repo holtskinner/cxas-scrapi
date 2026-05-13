@@ -60,7 +60,7 @@ cxas init --target-dir /path/to/my-agent-project
 When you upgrade `cxas-scrapi`, the bundled skills may have been updated. Use `--force` to overwrite the existing skill files:
 
 ```bash
-pip install --upgrade cxas-scrapi
+uv pip install --upgrade cxas-scrapi
 cxas init --force
 ```
 
